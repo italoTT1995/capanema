@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capanema Executive | Transporte Executivo & Veículos Blindados em Belo Horizonte</title>
+  <meta name="description" content="Mobilidade executiva de alto padrão em Belo Horizonte e Minas Gerais. Translado para Confins e Pampulha, veículos blindados nível III-A, sedans, SUVs, vans e motoristas bilíngues 24h.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/identidade/logo-capanema-branco.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#C5A059',
+              light: '#E5C378',
+              dark: '#9E7D3B',
+              soft: '#F3E5AB',
+            },
+            dark: {
+              base: '#08080A',
+              card: '#111115',
+              hover: '#18181F',
+              border: '#24242E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Translate Element Script -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#121419] text-gray-200 antialiased selection:bg-[#C5A059]/30 selection:text-white">
+
+  <!-- Splash Preloader (Referência) -->
+  <div id="capanema-preloader" aria-hidden="true">
+    <div class="flex flex-col items-center text-center px-6 space-y-6 max-w-md">
+      <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive" class="h-14 sm:h-16 w-auto opacity-95">
+      <p id="preloader-msg" class="font-serif-luxury italic text-lg sm:text-xl text-[#E5C378] tracking-wide transition-opacity duration-500">
+        Segurança e Conforto é na Capanema Executive
+      </p>
+      <div class="space-y-2.5 w-48">
+        <p class="text-[10px] uppercase tracking-[0.28em] text-slate-400 font-semibold">O site está carregando</p>
+        <div class="w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+          <div class="preloader-progress-fill rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden Google Translate Element -->
+  <div id="google_translate_element" class="hidden"></div>
+
+  <!-- Minimalist Luxury Glass Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-[#121419]/92 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+
+        <!-- Logo Oficial Capanema -->
+        <a href="#inicio" class="flex items-center gap-3 shrink-0 group py-2">
+          <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive" class="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow">
+        </a>
+
+        <!-- Desktop Navigation Links Minimalistas -->
+        <nav class="hidden lg:flex items-center gap-8 text-xs font-medium tracking-[0.12em] uppercase text-zinc-300">
+          <a href="#inicio" class="hover:text-gold transition-colors py-2">Início</a>
+          <a href="#frota" class="hover:text-gold transition-colors py-2">Frota e Serviços</a>
+          <a href="#sobre" class="hover:text-gold transition-colors py-2">Quem Somos</a>
+          <a href="galerias.html" class="hover:text-gold transition-colors py-2">Galerias</a>
+        </nav>
+
+        <!-- Right Side: Idiomas & CTA Dourado -->
+        <div class="hidden sm:flex items-center gap-3">
+          <!-- Multi-language Pill -->
+          <div class="flex items-center bg-[#1B1F27] border border-white/10 rounded-full p-1 text-[11px] font-semibold">
+            <button onclick="changeLanguage('pt')" class="lang-btn px-2.5 py-1 rounded-full text-gold bg-gold/15 font-bold transition-all" data-lang="pt">PT</button>
+            <button onclick="changeLanguage('en')" class="lang-btn px-2.5 py-1 rounded-full text-slate-300 hover:text-white transition-all" data-lang="en">EN</button>
+            <button onclick="changeLanguage('es')" class="lang-btn px-2.5 py-1 rounded-full text-slate-300 hover:text-white transition-all" data-lang="es">ES</button>
+          </div>
+
+          <!-- Solid Luxury Gold CTA -->
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20VIP%20com%20a%20Capanema%20Executive." target="_blank" class="px-5 py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs tracking-wide shadow-[0_0_20px_rgba(197,160,89,0.2)] hover:shadow-[0_0_25px_rgba(197,160,89,0.4)] transition-all flex items-center gap-2">
+            <span>Orçamento no WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-[#15151C] border border-white/10 text-gray-200 hover:text-gold focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="drawer-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[#181B22] border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col p-6 shadow-2xl">
+    <div class="flex items-center justify-between pb-6 border-b border-white/10">
+      <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive" class="h-7 w-auto">
+      <button id="close-menu-btn" class="p-2 rounded-lg bg-[#181820] text-gray-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto py-6 space-y-3 text-base font-medium">
+      <a href="#inicio" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Início</a>
+      <a href="#servicos" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Serviços Executivos</a>
+      <a href="#frota" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Frota & Blindados</a>
+      <a href="#experiencia" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Experiência a Bordo</a>
+      <a href="#sobre" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Quem Somos</a>
+      <a href="#cotacao" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Orçamento Rápido</a>
+      <a href="galerias.html" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Galerias</a>
+    </div>
+
+    <div class="pt-5 border-t border-white/10 space-y-3">
+      <div class="flex items-center justify-between bg-[#1B1F27] border border-white/10 rounded-xl p-1.5 text-xs font-semibold">
+        <span class="text-slate-400 pl-2">Idioma:</span>
+        <div class="flex items-center gap-1">
+          <button onclick="changeLanguage('pt')" class="lang-btn px-2.5 py-1 rounded-lg text-gold bg-gold/15 font-bold transition-all" data-lang="pt">PT</button>
+          <button onclick="changeLanguage('en')" class="lang-btn px-2.5 py-1 rounded-lg text-zinc-400 hover:text-white transition-all" data-lang="en">EN</button>
+          <button onclick="changeLanguage('es')" class="lang-btn px-2.5 py-1 rounded-lg text-zinc-400 hover:text-white transition-all" data-lang="es">ES</button>
+        </div>
+      </div>
+      <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20VIP." target="_blank" class="w-full py-3 px-4 rounded-xl bg-gold-gradient text-black font-bold text-center flex items-center justify-center gap-2 shadow-lg">
+        <i data-lucide="message-square" class="w-4 h-4"></i>
+        <span>Orçamento no WhatsApp</span>
+      </a>
+      <p class="text-xs text-center text-gray-500">Plantão de Atendimento 24h</p>
+    </div>
+  </aside>
+
+  <!-- 1. HERO EDITORIAL (Com imagem em movimento Ken Burns ao fundo + texto à esquerda) -->
+  <section id="inicio" class="relative min-h-[88vh] sm:min-h-screen pt-24 sm:pt-28 pb-12 sm:pb-16 flex items-center overflow-hidden bg-[#121419]">
+    <!-- Background Showcase com Ken Burns -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img src="assets/images/frota/blindado-gran-cherokee.png" alt="Jeep Grand Cherokee Blindado Capanema Executive" class="hero-ken-burns w-full h-full object-cover object-center lg:object-right opacity-60 sm:opacity-75">
+      <!-- Vinheta editorial para contraste perfeito no texto à esquerda -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#121419] via-[#121419]/72 to-[#121419]/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#121419] via-transparent to-[#121419]/55"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+      <div class="max-w-2xl space-y-7 hero-animate">
+
+        <!-- Eyebrow Labels (estilo 2 colunas do vídeo) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-white/15 max-w-xl">
+          <div>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-300">Transporte Executivo</p>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-gold">& Veículos Blindados III-A</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-300">Belo Horizonte e</p>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-slate-300">Região Metropolitana</p>
+          </div>
+        </div>
+
+        <!-- Headline Editorial (Playfair regular + italic) -->
+        <h1 class="font-serif-luxury text-3xl sm:text-5xl lg:text-[3.75rem] font-medium tracking-tight text-white leading-[1.08]">
+          Seu transfer executivo, <span class="italic text-[#E5C378]">pontual do desembarque</span> ao destino
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg text-zinc-300 font-normal leading-relaxed max-w-xl">
+          Traslados para os aeroportos de Confins e Pampulha, viagens intermunicipais, eventos e diárias corporativas em Belo Horizonte com preço fechado e motorista aguardando você na chegada.
+        </p>
+
+        <!-- Action Buttons (Corporativo & Direto) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20no%20WhatsApp%20com%20a%20Capanema%20Executive." target="_blank" class="px-7 py-3.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_10px_30px_rgba(197,160,89,0.28)]">
+            <span>Solicitar orçamento no WhatsApp</span>
+          </a>
+
+          <a href="#cotacao" class="px-7 py-3.5 rounded-xl bg-[#1B1F27]/90 hover:bg-[#1C1C22] border border-white/15 hover:border-gold/50 text-white font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2">
+            <span>Chamar corrida imediata</span>
+          </a>
+        </div>
+
+        <!-- Micro-trust line -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs text-slate-300">
+          <span>Monitoramento de voo</span>
+          <span class="text-zinc-600">•</span>
+          <span>Veículos blindados III-A</span>
+          <span class="text-zinc-600">•</span>
+          <span>Atendimento 24h</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MARQUEE CONFIANÇA B2B & CREDIBILIDADE (Com botão Pause / Play igual ao vídeo) -->
+  <section class="py-16 border-y border-white/10 bg-[#171A21] relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Top Header do Marquee -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div class="space-y-1.5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Confiança & Padrão Executivo</p>
+          <h2 class="font-serif-luxury text-2xl sm:text-3xl text-white font-medium">
+            Mobilidade corporativa que atende Belo Horizonte e Minas Gerais
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5 self-start sm:self-auto">
+          <button id="marquee-toggle-btn" type="button" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#15151A] border border-white/10 hover:border-gold/40 text-[11px] font-semibold tracking-wider text-zinc-300 transition-colors cursor-pointer">
+            <span id="marquee-icon-pause"><i data-lucide="pause" class="w-3.5 h-3.5 text-gold"></i></span>
+            <span id="marquee-icon-play" class="hidden"><i data-lucide="play" class="w-3.5 h-3.5 text-gold"></i></span>
+            <span id="marquee-status-text">EM MOVIMENTO</span>
+          </button>
+
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20comercial%20da%20Capanema%20Executive." target="_blank" class="px-4 py-2 rounded-xl bg-[#18181F] hover:bg-gold hover:text-black border border-white/15 text-xs font-semibold text-white transition-all">
+            Falar com o comercial
+          </a>
+        </div>
+      </div>
+
+      <!-- Marquee Track Infinito -->
+      <div class="marquee-viewport py-4">
+        <div id="b2b-marquee-track" class="marquee-track items-center gap-12 sm:gap-16">
+          <!-- Set 1 -->
+          <div class="flex items-center gap-12 sm:gap-16 shrink-0">
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-cinzel text-lg sm:text-xl tracking-widest text-white font-semibold">CONFINS & PAMPULHA</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Recepção Nominal</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-serif-luxury italic text-xl sm:text-2xl text-[#E5C378]">Blindagem III-A</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Proteção Balística</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-cinzel text-lg sm:text-xl tracking-widest text-white font-semibold">INHOTIM & OURO PRETO</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Roteiros Privativos</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-serif-luxury text-xl sm:text-2xl text-white">Faturamento Corporativo</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Nota Fiscal & Contratos</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-cinzel text-lg sm:text-xl tracking-widest text-white font-semibold">MOTORISTAS BILÍNGUES</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Discrição & Sigilo</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-serif-luxury italic text-xl sm:text-2xl text-[#E5C378]">Serviço de Bordo VIP</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Água, Café & Wi-Fi</p>
+            </div>
+          </div>
+
+          <!-- Set 2 (Duplicado para loop perfeito) -->
+          <div class="flex items-center gap-12 sm:gap-16 shrink-0" aria-hidden="true">
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-cinzel text-lg sm:text-xl tracking-widest text-white font-semibold">CONFINS & PAMPULHA</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Recepção Nominal</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-serif-luxury italic text-xl sm:text-2xl text-[#E5C378]">Blindagem III-A</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Proteção Balística</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-cinzel text-lg sm:text-xl tracking-widest text-white font-semibold">INHOTIM & OURO PRETO</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Roteiros Privativos</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-serif-luxury text-xl sm:text-2xl text-white">Faturamento Corporativo</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Nota Fiscal & Contratos</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-cinzel text-lg sm:text-xl tracking-widest text-white font-semibold">MOTORISTAS BILÍNGUES</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Discrição & Sigilo</p>
+            </div>
+            <div class="text-center opacity-80 hover:opacity-100 transition-opacity">
+              <p class="font-serif-luxury italic text-xl sm:text-2xl text-[#E5C378]">Serviço de Bordo VIP</p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-0.5">Água, Café & Wi-Fi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-400 mt-4">
+        Atendimento recorrente, ponto de contato único e nota fiscal para empresas.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. ORÇAMENTO RÁPIDO (Layout 2 colunas da referência: Texto à esquerda, Card Form à direita) -->
+  <section id="cotacao" class="reveal py-16 sm:py-24 bg-[#121419] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Coluna Esquerda: Título & Explicação -->
+        <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Orçamento Rápido</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-[2.75rem] text-white font-medium leading-[1.15]">
+            Chegue no WhatsApp com o pedido pronto
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            Preencha os dados da viagem. Montamos a mensagem organizada para a equipe Capanema Executive e você recebe a confirmação e o valor fechado rapidamente.
+          </p>
+          <div class="pt-4 grid grid-cols-2 gap-4 border-t border-white/10 text-xs text-slate-300">
+            <div>
+              <p class="text-white font-semibold mb-0.5">+500 Viagens</p>
+              <p>Executadas com excelência</p>
+            </div>
+            <div>
+              <p class="text-white font-semibold mb-0.5">Plantão 24h / 7d</p>
+              <p>Resposta imediata</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Formulário Limpo -->
+        <div class="lg:col-span-7">
+          <div class="rounded-2xl bg-[#1B1F27] border border-white/10 p-5 sm:p-8 shadow-2xl">
+            <form id="vip-quote-form" class="space-y-5">
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-zinc-300">Tipo de Serviço</label>
+                  <select id="quote-service" class="w-full px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors">
+                    <option value="Transfer Aeroporto (Confins / Pampulha)">Transfer Aeroporto (Confins / Pampulha)</option>
+                    <option value="Atendimento Corporativo / Executivo">Atendimento Corporativo / Executivo</option>
+                    <option value="Veículo Blindado Nível III-A">Veículo Blindado Nível III-A</option>
+                    <option value="Eventos & Casamentos (Transporte da Noiva)">Eventos & Casamentos</option>
+                    <option value="City Tour Privativo (Inhotim / Ouro Preto)">City Tour (Inhotim / Ouro Preto)</option>
+                    <option value="Disposição 24h / Viagem Intermunicipal">Disposição 24h / Viagem Intermunicipal</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-zinc-300">Veículo Desejado</label>
+                  <select id="quote-vehicle" class="w-full px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors">
+                    <option value="Jeep Grand Cherokee (Blindado III-A)">Jeep Grand Cherokee (Blindado III-A)</option>
+                    <option value="Kia Grand Carnival (Blindada III-A)">Kia Grand Carnival (Blindada III-A)</option>
+                    <option value="Chery Tiggo 8X Turbo">Chery Tiggo 8X Turbo</option>
+                    <option value="Honda Civic G10 / Sedan Executivo">Honda Civic G10 / Sedan Executivo</option>
+                    <option value="Mercedes-Benz Sprinter Luxo">Mercedes-Benz Sprinter Luxo</option>
+                    <option value="Ônibus Executivo (46 Lugares)">Ônibus Executivo (46 Lugares)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-zinc-300">Origem</label>
+                <input type="text" id="quote-origin" placeholder="Ex: Aeroporto Confins, Terminal de Desembarque" class="w-full px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors placeholder:text-zinc-600" required>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-zinc-300">Destino</label>
+                <input type="text" id="quote-destination" placeholder="Ex: Hotel Fasano, Savassi, Inhotim ou empresa" class="w-full px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors placeholder:text-zinc-600" required>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-zinc-300">Data</label>
+                  <input type="date" id="quote-date" class="w-full min-w-0 px-3 sm:px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors">
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-medium text-zinc-300">Horário</label>
+                  <input type="time" id="quote-time" class="w-full min-w-0 px-3 sm:px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors">
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-medium text-zinc-300">Passageiros, malas e número do voo (opcional)</label>
+                <input type="text" id="quote-notes" placeholder="Ex: 2 passageiros, 3 malas, Voo LA 3348" class="w-full px-4 py-3 rounded-xl bg-[#121419] border border-white/10 focus:border-gold text-white text-sm outline-none transition-colors placeholder:text-zinc-600">
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-sm transition-all flex items-center justify-center gap-2.5 shadow-lg cursor-pointer">
+                <span>Receber orçamento no WhatsApp</span>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SERVIÇOS ("Um serviço para cada trajeto" — 3 cards minimalistas + link) -->
+  <section id="servicos" class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#171A21] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div class="space-y-2">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Serviços</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium">
+            Um serviço para cada trajeto
+          </h2>
+        </div>
+
+        <a href="#frota" class="text-xs font-medium text-zinc-300 hover:text-gold transition-colors inline-flex items-center gap-1.5">
+          <span>Ver frota e serviços completos</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 01 -->
+        <div class="reveal reveal-delay-1 card-luxury rounded-2xl p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="text-xs font-semibold text-gold tracking-widest">01</span>
+            <h3 class="text-xl font-semibold text-white">Transfer aeroporto</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Chegada e partida com espera nominal no desembarque (Confins e Pampulha), auxílio com bagagens e monitoramento do seu voo.
+            </p>
+          </div>
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20or%C3%A7amento%20para%20Transfer%20Aeroporto." target="_blank" class="text-xs font-semibold text-zinc-200 hover:text-gold inline-flex items-center gap-1.5 transition-colors">
+            <span>Pedir orçamento no WhatsApp</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="reveal reveal-delay-2 card-luxury rounded-2xl p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="text-xs font-semibold text-gold tracking-widest">02</span>
+            <h3 class="text-xl font-semibold text-white">Blindados & Corporativo</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Deslocamentos executivos em veículos blindados Nível III-A entre reuniões, hotéis e escritórios com sigilo absoluto.
+            </p>
+          </div>
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20or%C3%A7amento%20para%20Transporte%20Blindado%20e%20Corporativo." target="_blank" class="text-xs font-semibold text-zinc-200 hover:text-gold inline-flex items-center gap-1.5 transition-colors">
+            <span>Pedir orçamento no WhatsApp</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="reveal reveal-delay-3 card-luxury rounded-2xl p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="text-xs font-semibold text-gold tracking-widest">03</span>
+            <h3 class="text-xl font-semibold text-white">Eventos, Noivas & City Tour</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Logística dedicada para casamentos, comitivas, Inhotim, Ouro Preto e viagens intermunicipais com serviço de bordo VIP.
+            </p>
+          </div>
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20or%C3%A7amento%20para%20Eventos%20ou%20City%20Tour." target="_blank" class="text-xs font-semibold text-zinc-200 hover:text-gold inline-flex items-center gap-1.5 transition-colors">
+            <span>Pedir orçamento no WhatsApp</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FROTA COMPLETA COM FILTROS ("Veículos novos, silenciosos e climatizados") -->
+  <section id="frota" class="reveal py-16 sm:py-24 bg-[#121419] relative border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header da Frota + Filtros -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Frota Homologada</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium">
+            Veículos novos, silenciosos e climatizados
+          </h2>
+          <p class="text-sm text-slate-300">
+            Blindados Nível III-A, SUVs, sedans executivos e vans higienizados antes de cada embarque.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button data-filter="all" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-gold-gradient text-black shadow-lg transition-all cursor-pointer">Todos</button>
+          <button data-filter="blindados" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-[#1B1F27] border border-white/10 text-gray-300 hover:border-[#C5A059]/50 transition-all cursor-pointer">Blindados III-A</button>
+          <button data-filter="suv" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-[#1B1F27] border border-white/10 text-gray-300 hover:border-[#C5A059]/50 transition-all cursor-pointer">SUVs</button>
+          <button data-filter="sedan" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-[#1B1F27] border border-white/10 text-gray-300 hover:border-[#C5A059]/50 transition-all cursor-pointer">Sedans</button>
+          <button data-filter="van" class="fleet-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-[#1B1F27] border border-white/10 text-gray-300 hover:border-[#C5A059]/50 transition-all cursor-pointer">Vans & Ônibus</button>
+        </div>
+      </div>
+
+      <!-- Fleet Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Car 1: Jeep Grand Cherokee Blindado -->
+        <div class="fleet-card card-luxury rounded-2xl overflow-hidden group border border-[#C5A059]/30 flex flex-col" data-category="blindados">
+          <div class="relative h-56 overflow-hidden bg-[#181B22]">
+            <img src="assets/images/frota/blindado-gran-cherokee.png" alt="Jeep Grand Cherokee Blindado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1B1F27] via-transparent to-black/15"></div>
+            <span class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A059] text-black">
+              Blindado III-A
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">Jeep Grand Cherokee</h3>
+                <span class="text-[10px] uppercase tracking-wider text-gold font-semibold">Premium</span>
+              </div>
+              <p class="text-xs text-slate-300">5 passageiros · 457L malas</p>
+              <p class="text-xs text-slate-400">Proteção balística III-A · Dual-Zone · Couro · Wi-Fi</p>
+            </div>
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20disponibilidade%20do%20Jeep%20Grand%20Cherokee%20Blindado." target="_blank" class="w-full py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Orçamento com este veículo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Car 2: Kia Grand Carnival Blindada -->
+        <div class="fleet-card card-luxury rounded-2xl overflow-hidden group border border-[#C5A059]/30 flex flex-col" data-category="blindados">
+          <div class="relative h-56 overflow-hidden bg-[#181B22]">
+            <img src="assets/images/frota/blindado-kia-carnival.png" alt="Kia Carnival Blindada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1B1F27] via-transparent to-black/15"></div>
+            <span class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#C5A059] text-black">
+              Blindado III-A
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">Kia Grand Carnival</h3>
+                <span class="text-[10px] uppercase tracking-wider text-gold font-semibold">Minivan VIP</span>
+              </div>
+              <p class="text-xs text-slate-300">7 a 8 passageiros · Espaço XL</p>
+              <p class="text-xs text-slate-400">Proteção balística III-A · Tri-Zone · Água · Wi-Fi</p>
+            </div>
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20disponibilidade%20da%20Kia%20Carnival%20Blindada." target="_blank" class="w-full py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Orçamento com este veículo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Car 3: Chery Tiggo 8X Turbo -->
+        <div class="fleet-card card-luxury rounded-2xl overflow-hidden group flex flex-col" data-category="suv">
+          <div class="relative h-56 overflow-hidden bg-[#181B22]">
+            <img src="assets/images/frota/suv-chery-tiggo.png" alt="Chery Tiggo 8X Turbo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1B1F27] via-transparent to-black/15"></div>
+            <span class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-black/70 text-zinc-200 border border-white/15">
+              SUV Executivo
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">Chery Tiggo 8X Turbo</h3>
+                <span class="text-[10px] uppercase tracking-wider text-slate-300 font-semibold">SUV</span>
+              </div>
+              <p class="text-xs text-slate-300">5 passageiros · 475L malas</p>
+              <p class="text-xs text-slate-400">Teto panorâmico · Ar-condicionado · USB · Wi-Fi</p>
+            </div>
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20o%20SUV%20Chery%20Tiggo%208X." target="_blank" class="w-full py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Orçamento com este veículo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Car 4: Honda Civic G10 -->
+        <div class="fleet-card card-luxury rounded-2xl overflow-hidden group flex flex-col" data-category="sedan">
+          <div class="relative h-56 overflow-hidden bg-[#181B22]">
+            <img src="assets/images/frota/sedan-executivo-civic.png" alt="Honda Civic G10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1B1F27] via-transparent to-black/15"></div>
+            <span class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-black/70 text-zinc-200 border border-white/15">
+              Sedan VIP
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">Honda Civic G10</h3>
+                <span class="text-[10px] uppercase tracking-wider text-slate-300 font-semibold">Executivo</span>
+              </div>
+              <p class="text-xs text-slate-300">4 passageiros · 519L malas</p>
+              <p class="text-xs text-slate-400">Ar-condicionado · Água · Carregador USB · Wi-Fi</p>
+            </div>
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20o%20Honda%20Civic%20G10." target="_blank" class="w-full py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Orçamento com este veículo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Car 5: Mercedes-Benz Sprinter Luxo -->
+        <div class="fleet-card card-luxury rounded-2xl overflow-hidden group flex flex-col" data-category="van">
+          <div class="relative h-56 overflow-hidden bg-[#181B22]">
+            <img src="assets/images/frota/van-executiva-prata.png" alt="Mercedes-Benz Sprinter Luxo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1B1F27] via-transparent to-black/15"></div>
+            <span class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-black/70 text-gold border border-gold/30">
+              Van VIP
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">Mercedes-Benz Sprinter</h3>
+                <span class="text-[10px] uppercase tracking-wider text-slate-300 font-semibold">Grupos</span>
+              </div>
+              <p class="text-xs text-slate-300">10 a 15 passageiros · Poltronas Soft</p>
+              <p class="text-xs text-slate-400">Ar de teto · Iluminação indireta · USB · Wi-Fi</p>
+            </div>
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20para%20a%20Van%20Mercedes%20Sprinter." target="_blank" class="w-full py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Orçamento com este veículo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Car 6: Ônibus Executivo -->
+        <div class="fleet-card card-luxury rounded-2xl overflow-hidden group flex flex-col" data-category="van">
+          <div class="relative h-56 overflow-hidden bg-[#181B22]">
+            <img src="assets/images/frota/onibus-executivo.png" alt="Ônibus Executivo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1B1F27] via-transparent to-black/15"></div>
+            <span class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-black/70 text-zinc-200 border border-white/15">
+              Delegações
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">Ônibus Executivo Viagem</h3>
+                <span class="text-[10px] uppercase tracking-wider text-slate-300 font-semibold">Eventos</span>
+              </div>
+              <p class="text-xs text-slate-300">46 passageiros · WC a bordo</p>
+              <p class="text-xs text-slate-400">Poltronas reclináveis · Telas & Som · Climatizado</p>
+            </div>
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20para%20%C3%94nibus%20Executivo." target="_blank" class="w-full py-2.5 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Orçamento com este veículo</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. COMO FUNCIONA ("Três passos até o seu destino") -->
+  <section class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#171A21] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+      <div class="space-y-2">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Como Funciona</p>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium">
+          Três passos até o seu destino
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-4 border-t border-white/10">
+        <div class="reveal reveal-delay-1 space-y-3">
+          <span class="text-xs font-semibold text-gold tracking-widest">01</span>
+          <h3 class="text-xl font-semibold text-white">Envie os dados da viagem</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Origem, destino, data, horário e quantidade de passageiros pelo formulário ou WhatsApp.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-2 space-y-3">
+          <span class="text-xs font-semibold text-gold tracking-widest">02</span>
+          <h3 class="text-xl font-semibold text-white">Receba o valor fechado</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Você confirma a reserva com valor fechado e sem surpresas antes mesmo de viajar.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-3 space-y-3">
+          <span class="text-xs font-semibold text-gold tracking-widest">03</span>
+          <h3 class="text-xl font-semibold text-white">Seu motorista espera você</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            No desembarque ou no local combinado, com placa de identificação e veículo pronto.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 pt-2 text-xs font-semibold">
+        <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20um%20agendamento%20com%20a%20Capanema%20Executive." target="_blank" class="text-gold hover:text-white inline-flex items-center gap-1.5 transition-colors">
+          <span>Começar pelo WhatsApp</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#sobre" class="text-zinc-300 hover:text-gold inline-flex items-center gap-1.5 transition-colors">
+          <span>Conheça a Capanema Executive</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. DIFERENCIAIS ("O que você pode esperar em toda corrida" — 2 colunas da referência) -->
+  <section class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#121419] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Esquerda -->
+        <div class="lg:col-span-5 space-y-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Diferenciais</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium leading-[1.15]">
+            O que você pode esperar em toda corrida
+          </h2>
+          <div class="pt-2">
+            <a href="#cotacao" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gold-gradient hover:brightness-110 text-black font-bold text-xs tracking-wide transition-all">
+              <span>Solicitar orçamento</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Direita: Lista limpa com pontos dourados -->
+        <div class="lg:col-span-7 divide-y divide-white/10 border-y border-white/10">
+          <div class="py-5 flex items-start gap-4">
+            <span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span>
+            <div>
+              <h4 class="text-base font-semibold text-white">Pontualidade com monitoramento de voo</h4>
+              <p class="text-sm text-slate-300 mt-1">Acompanhamos seu voo em tempo real e chegamos 15 minutos antes do horário combinado.</p>
+            </div>
+          </div>
+
+          <div class="py-5 flex items-start gap-4">
+            <span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span>
+            <div>
+              <h4 class="text-base font-semibold text-white">Blindagem Nível III-A certificada</h4>
+              <p class="text-sm text-slate-300 mt-1">Veículos blindados com documentação regularizada e motoristas preparados para máxima segurança.</p>
+            </div>
+          </div>
+
+          <div class="py-5 flex items-start gap-4">
+            <span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span>
+            <div>
+              <h4 class="text-base font-semibold text-white">Motoristas treinados, bilíngues e discretos</h4>
+              <p class="text-sm text-slate-300 mt-1">Atendimento cordial e sigiloso, do primeiro contato no WhatsApp até o destino final.</p>
+            </div>
+          </div>
+
+          <div class="py-5 flex items-start gap-4">
+            <span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span>
+            <div>
+              <h4 class="text-base font-semibold text-white">Serviço de bordo VIP & higienização</h4>
+              <p class="text-sm text-slate-300 mt-1">Frota revisada, aromatizada e equipada com água gelada, mimos, Wi-Fi e carregadores.</p>
+            </div>
+          </div>
+
+          <div class="py-5 flex items-start gap-4">
+            <span class="w-2 h-2 rounded-full bg-gold mt-2 shrink-0"></span>
+            <div>
+              <h4 class="text-base font-semibold text-white">Nota fiscal e faturamento corporativo</h4>
+              <p class="text-sm text-slate-300 mt-1">Emissão de nota fiscal e atendimento recorrente sob CNPJ 45.731.649/0001-10.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. EXPERIÊNCIA A BORDO (Tabs interativas com fotos reais da Capanema) -->
+  <section id="experiencia" class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#171A21] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div class="space-y-2 max-w-2xl">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Hospitalidade Exclusiva</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium">
+            Padrão Capanema a Bordo
+          </h2>
+        </div>
+        <p class="text-sm text-slate-300 max-w-md">
+          Mais do que levar você ao destino: pensamos em cada sensação, aroma e detalhe antes mesmo do embarque.
+        </p>
+      </div>
+
+      <!-- 4 Interactive Tabs -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
+        <button class="bordo-tab p-4 rounded-2xl border border-[#C5A059] bg-[#C5A059]/10 text-white text-left transition-all duration-300 cursor-pointer">
+          <span class="tab-num text-xs font-bold text-[#C5A059] block mb-1">01</span>
+          <h4 class="font-bold text-sm">Bebidas Climatizadas</h4>
+          <p class="text-xs text-gray-400 mt-1 line-clamp-1">Águas & Refresco</p>
+        </button>
+
+        <button class="bordo-tab p-4 rounded-2xl border border-white/10 bg-[#111115]/60 text-gray-400 hover:text-white text-left transition-all duration-300 cursor-pointer">
+          <span class="tab-num text-xs font-bold block mb-1">02</span>
+          <h4 class="font-bold text-sm">Mimos & Café</h4>
+          <p class="text-xs text-gray-400 mt-1 line-clamp-1">Doces & Snacks</p>
+        </button>
+
+        <button class="bordo-tab p-4 rounded-2xl border border-white/10 bg-[#111115]/60 text-gray-400 hover:text-white text-left transition-all duration-300 cursor-pointer">
+          <span class="tab-num text-xs font-bold block mb-1">03</span>
+          <h4 class="font-bold text-sm">Wi-Fi & Energia</h4>
+          <p class="text-xs text-gray-400 mt-1 line-clamp-1">Cabos Universais</p>
+        </button>
+
+        <button class="bordo-tab p-4 rounded-2xl border border-white/10 bg-[#111115]/60 text-gray-400 hover:text-white text-left transition-all duration-300 cursor-pointer">
+          <span class="tab-num text-xs font-bold block mb-1">04</span>
+          <h4 class="font-bold text-sm">Cabine Sanitizada</h4>
+          <p class="text-xs text-gray-400 mt-1 line-clamp-1">Silêncio & Aroma</p>
+        </button>
+      </div>
+
+      <!-- Dynamic Display Box -->
+      <div class="rounded-2xl bg-[#1B1F27] p-6 sm:p-10 border border-white/10 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+          <div class="lg:col-span-6 space-y-5">
+            <h3 id="bordo-title" class="font-serif-luxury text-2xl sm:text-3xl font-medium text-white">
+              Bebidas & Refresco Climatizado
+            </h3>
+            <p id="bordo-tagline" class="text-sm font-semibold text-gold">
+              Hidratação de alto padrão para quem valoriza cada momento
+            </p>
+            <p id="bordo-desc" class="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              Águas minerais com e sem gás mantidas na temperatura ideal, além de opções personalizadas de bebidas para refrescar sua chegada e tornar cada quilômetro suave e revigorante.
+            </p>
+            <p id="bordo-quote" class="text-sm italic text-slate-300 border-l-2 border-gold pl-4">
+              "O cuidado começa antes mesmo de você fechar a porta."
+            </p>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 aspect-[16/10] bg-black/50">
+              <img id="bordo-img" src="assets/images/bordo/servico-bordo-1.jpeg" alt="Experiência a Bordo Capanema" class="w-full h-full object-cover transition-all duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <p id="bordo-label" class="absolute bottom-4 left-4 text-xs font-medium text-gray-200">
+                Foto Real: Climatização & Bebidas a Bordo
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. DEPOIMENTOS (Estilo limpo com aspas da referência) -->
+  <section class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#121419] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+      <div class="space-y-2">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Quem Viaja com a Capanema</p>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium">
+          Depoimentos
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="reveal reveal-delay-1 rounded-2xl bg-[#1B1F27] border border-white/10 p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="font-serif-luxury text-4xl text-gold/60 leading-none block">“</span>
+            <p class="text-sm text-zinc-300 leading-relaxed">
+              Excelente serviço de transfer para Confins. Carro extremamente limpo, com água gelada e balinhas. O motorista já estava nos aguardando no desembarque com a placa. Nota mil!
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 text-xs">
+            <span class="font-semibold text-white">Marcelo Ribeiro</span>
+            <span class="text-slate-400"> · Diretor Comercial</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 rounded-2xl bg-[#1B1F27] border border-white/10 p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="font-serif-luxury text-4xl text-gold/60 leading-none block">“</span>
+            <p class="text-sm text-zinc-300 leading-relaxed">
+              Contratamos o transporte da noiva e foi a melhor escolha! Pontualidade britânica, tranquilidade total e o carro estava um espetáculo. Recomendo de olhos fechados.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 text-xs">
+            <span class="font-semibold text-white">Gabriela Freitas</span>
+            <span class="text-slate-400"> · Casamento no Vila da Serra</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-3 rounded-2xl bg-[#1B1F27] border border-white/10 p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <span class="font-serif-luxury text-4xl text-gold/60 leading-none block">“</span>
+            <p class="text-sm text-zinc-300 leading-relaxed">
+              Utilizamos o Cherokee blindado para visitas técnicas de investidores estrangeiros. Atendimento impecável, motorista muito educado e discrição absoluta.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 text-xs">
+            <span class="font-semibold text-white">Eduardo Nogueira</span>
+            <span class="text-slate-400"> · Consultoria de M&amp;A</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. FAQ ACORDEÃO ("Antes de viajar" — 2 colunas igual ao vídeo) -->
+  <section id="faq" class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#171A21] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Esquerda -->
+        <div class="lg:col-span-5 space-y-4">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Perguntas Frequentes</p>
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl text-white font-medium">
+            Antes de viajar
+          </h2>
+          <p class="text-sm text-slate-300">
+            Não encontrou sua dúvida?
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20transporte%20executivo." target="_blank" class="text-gold underline underline-offset-4 hover:text-white transition-colors ml-1">
+              Pergunte no WhatsApp
+            </a>
+          </p>
+        </div>
+
+        <!-- Direita: Acordeão interativo -->
+        <div class="lg:col-span-7 divide-y divide-white/10 border-y border-white/10">
+
+          <div class="faq-item py-5">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="text-base font-medium text-white">E se o meu voo atrasar?</span>
+              <span class="faq-plus text-xl text-slate-300 font-light leading-none">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="pt-3 text-sm text-slate-300 leading-relaxed">
+                  Acompanhamos o status do seu voo em tempo real pela companhia aérea. Se houver atraso ou antecipação, ajustamos o horário sem custo de estresse — o motorista estará aguardando no desembarque quando você chegar.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="text-base font-medium text-white">Como funciona a espera no aeroporto?</span>
+              <span class="faq-plus text-xl text-slate-300 font-light leading-none">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="pt-3 text-sm text-slate-300 leading-relaxed">
+                  O motorista aguarda na área de desembarque com placa de identificação nominal ou da sua empresa, auxiliando imediatamente com todas as bagagens até o veículo climatizado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="text-base font-medium text-white">Os veículos blindados possuem certificação?</span>
+              <span class="faq-plus text-xl text-slate-300 font-light leading-none">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="pt-3 text-sm text-slate-300 leading-relaxed">
+                  Sim. Nossos veículos blindados (como Jeep Grand Cherokee e Kia Grand Carnival) possuem blindagem Nível III-A homologada, com manutenção preventiva em dia e motoristas treinados em direção defensiva.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="text-base font-medium text-white">Quais são as formas de pagamento?</span>
+              <span class="faq-plus text-xl text-slate-300 font-light leading-none">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="pt-3 text-sm text-slate-300 leading-relaxed">
+                  Aceitamos Pix, cartão de crédito/débito e faturamento mensal para empresas mediante cadastro e emissão de Nota Fiscal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="text-base font-medium text-white">Posso cancelar ou alterar minha reserva?</span>
+              <span class="faq-plus text-xl text-slate-300 font-light leading-none">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="pt-3 text-sm text-slate-300 leading-relaxed">
+                  Sim. Alterações de horário, endereço ou cancelamentos são tratados diretamente com nosso plantão 24h pelo WhatsApp de forma ágil e transparente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button type="button" class="faq-trigger w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="text-base font-medium text-white">Vocês emitem nota fiscal para empresas?</span>
+              <span class="faq-plus text-xl text-slate-300 font-light leading-none">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p class="pt-3 text-sm text-slate-300 leading-relaxed">
+                  Sim! Somos empresa regularmente constituída (CNPJ 45.731.649/0001-10) com emissão de Nota Fiscal e contratos de atendimento corporativo recorrente.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. QUEM SOMOS (Luiz Capanema — Estética Editorial + Pilares) -->
+  <section id="sobre" class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#121419] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Left Column: Story -->
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Quem Somos</p>
+
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-[1.12]">
+            Nascida da vocação para o atendimento humanizado
+          </h2>
+
+          <p class="text-base text-zinc-300 leading-relaxed">
+            Fundada por <strong>Luiz Capanema</strong>, profissional com mais de uma década de atuação no setor bancário e corporativo, a <strong>Capanema Executive</strong> surgiu da convicção de que o transporte executivo não deve ser apenas pontual, mas uma extensão do conforto e da segurança do cliente.
+          </p>
+
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Estruturamos em Belo Horizonte uma operação completa com veículos blindados III-A, frota diversificada e motoristas preparados para atender executivos, comitivas e famílias com total discrição.
+          </p>
+
+          <!-- 3 Pilares Corporativos -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-5 rounded-xl bg-[#1B1F27] border border-white/10 border-t-2 border-t-[#C5A059]/70 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gold block">01 · Compliance</span>
+              <h4 class="font-semibold text-white text-sm">Segurança Jurídica</h4>
+              <p class="text-xs text-slate-300">CNPJ 45.731.649/0001-10 e apólice completa de passageiros.</p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-[#1B1F27] border border-white/10 border-t-2 border-t-[#C5A059]/70 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gold block">02 · SLA Rigoroso</span>
+              <h4 class="font-semibold text-white text-sm">Pontualidade</h4>
+              <p class="text-xs text-slate-300">Chegada com antecedência mínima de 15 minutos em cada trajeto.</p>
+            </div>
+
+            <div class="p-5 rounded-xl bg-[#1B1F27] border border-white/10 border-t-2 border-t-[#C5A059]/70 space-y-2">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gold block">03 · Confidencialidade</span>
+              <h4 class="font-semibold text-white text-sm">Sigilo & Discrição</h4>
+              <p class="text-xs text-slate-300">Confidencialidade total em reuniões e deslocamentos a bordo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-[#1B1F27] p-8 border border-white/10 space-y-6 text-center shadow-2xl">
+            <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive Logo" class="h-12 mx-auto w-auto">
+
+            <div class="space-y-2">
+              <h3 class="text-2xl font-serif-luxury italic text-[#E5C378]">"Sofisticação que Move"</h3>
+              <p class="text-xs text-slate-300 max-w-sm mx-auto">
+                Belo Horizonte • Aeroporto de Confins • Inhotim • Nova Lima • Minas Gerais
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#121419] border border-white/5 text-left text-xs text-zinc-300 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Empresa:</span>
+                <span class="font-semibold text-white">Capanema Executive</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">CNPJ:</span>
+                <span class="font-semibold text-white">45.731.649/0001-10</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Sede Operacional:</span>
+                <span class="font-semibold text-white">Belo Horizonte - MG</span>
+              </div>
+            </div>
+
+            <a href="https://wa.me/5531993008300?text=Ol%C3%A1%20Luiz!%20Gostaria%20de%20conversar%20sobre%20uma%20parceria%20corporativa." target="_blank" class="w-full py-3 rounded-xl bg-[#18181F] hover:bg-gold hover:text-black border border-white/10 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+              <span>Falar diretamente com a diretoria</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. CTA BANNER FINAL ("Sua próxima viagem começa com uma mensagem") -->
+  <section class="reveal py-16 sm:py-24 border-t border-white/10 bg-[#171A21] relative overflow-hidden">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <h2 class="font-serif-luxury text-3xl sm:text-5xl font-medium text-white leading-tight">
+        Sua próxima viagem começa com uma mensagem
+      </h2>
+
+      <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
+        Envie os dados do trajeto e receba a confirmação com valor fechado em poucos minutos.
+      </p>
+
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20no%20WhatsApp%20com%20a%20Capanema%20Executive." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-gradient text-black font-bold text-sm hover:brightness-110 shadow-2xl flex items-center justify-center gap-2.5 transition-all">
+          <span>Solicitar orçamento no WhatsApp</span>
+        </a>
+
+        <a href="tel:+5531993008300" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#1B1F27] hover:bg-[#1B1B22] border border-white/10 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+          <span>(31) 99300-8300</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. RODAPÉ LIMPO (4 Colunas iguais à referência) -->
+  <footer class="bg-[#0F1116] border-t border-white/10 pt-12 sm:pt-14 pb-24 sm:pb-10 text-slate-300 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+
+        <!-- Col 1: Marca -->
+        <div class="space-y-4">
+          <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive" class="h-8 w-auto">
+          <p class="leading-relaxed text-slate-300">
+            Transporte executivo, veículos blindados III-A e traslados para aeroportos em Belo Horizonte e Minas Gerais.
+          </p>
+          <p class="text-[11px] text-slate-400">CNPJ: 45.731.649/0001-10</p>
+        </div>
+
+        <!-- Col 2: Região Atendida -->
+        <div class="space-y-3">
+          <h4 class="font-semibold text-white text-[11px] uppercase tracking-[0.18em]">Região Atendida</h4>
+          <ul class="space-y-2 text-slate-300">
+            <li>Belo Horizonte e Região Metropolitana</li>
+            <li>Aeroporto Internacional de Confins</li>
+            <li>Aeroporto da Pampulha</li>
+            <li>Inhotim, Ouro Preto e Nova Lima</li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Atendimento -->
+        <div class="space-y-3">
+          <h4 class="font-semibold text-white text-[11px] uppercase tracking-[0.18em]">Atendimento</h4>
+          <ul class="space-y-2 text-slate-300">
+            <li>Plantão 24h, todos os dias</li>
+            <li>WhatsApp: +55 (31) 99300-8300</li>
+            <li>Segurança Balística Nível III-A</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Páginas -->
+        <div class="space-y-3">
+          <h4 class="font-semibold text-white text-[11px] uppercase tracking-[0.18em]">Páginas</h4>
+          <ul class="space-y-2">
+            <li><a href="#inicio" class="hover:text-gold transition-colors">Início</a></li>
+            <li><a href="#frota" class="hover:text-gold transition-colors">Frota e Serviços</a></li>
+            <li><a href="#sobre" class="hover:text-gold transition-colors">Quem Somos</a></li>
+            <li><a href="galerias.html" class="hover:text-gold transition-colors">Galerias</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-[11px]">
+        <p>© 2026 Capanema Executive. Todos os direitos reservados.</p>
+        <p>Belo Horizonte · Minas Gerais</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp FAB Button -->
+  <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20reserva%20com%20a%20Capanema%20Executive." target="_blank" aria-label="Falar no WhatsApp" class="whatsapp-pulse fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-[0_10px_25px_rgba(37,211,102,0.5)] transition-transform hover:scale-110">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+    </svg>
+  </a>
+
+  <!-- Script Initialization -->
+  <script src="animacoes.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerias | Capanema Executive | Transporte Executivo & Veículos Blindados em Belo Horizonte</title>
+  <meta name="description" content="Galerias de fotos da Capanema Executive: frota e blindados, experiência a bordo, city tour, casamentos, aeroportos e vans executivas em Belo Horizonte.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/identidade/logo-capanema-branco.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#C5A059',
+              light: '#E5C378',
+              dark: '#9E7D3B',
+              soft: '#F3E5AB',
+            },
+            dark: {
+              base: '#08080A',
+              card: '#111115',
+              hover: '#18181F',
+              border: '#24242E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#08080A] text-gray-200 antialiased selection:bg-[#C5A059]/30 selection:text-white overflow-x-hidden">
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 shrink-0 group py-2">
+          <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive" class="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-semibold tracking-[0.14em] uppercase text-zinc-300">
+          <a href="index.html#inicio" class="hover:text-gold transition-colors py-2">Início</a>
+          <a href="index.html#servicos" class="hover:text-gold transition-colors py-2">Serviços</a>
+          <a href="index.html#frota" class="hover:text-gold transition-colors py-2">Frota VIP</a>
+          <a href="index.html#experiencia" class="hover:text-gold transition-colors py-2">Experiência</a>
+          <a href="index.html#sobre" class="hover:text-gold transition-colors py-2">Quem Somos</a>
+          <a href="index.html#cotacao" class="hover:text-gold transition-colors py-2">Cotação Rápida</a>
+          <a href="galerias.html" class="hover:text-gold transition-colors py-2">Galerias</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-4">
+          <div class="flex items-center bg-[#131318] border border-white/10 rounded-full p-1 text-[11px] font-semibold">
+            <button onclick="changeLanguage('pt')" class="lang-btn px-2.5 py-1 rounded-full text-gold bg-gold/15 font-bold transition-all" data-lang="pt">PT</button>
+            <button onclick="changeLanguage('en')" class="lang-btn px-2.5 py-1 rounded-full text-zinc-400 hover:text-white transition-all" data-lang="en">EN</button>
+            <button onclick="changeLanguage('es')" class="lang-btn px-2.5 py-1 rounded-full text-zinc-400 hover:text-white transition-all" data-lang="es">ES</button>
+          </div>
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20reserva%20VIP%20com%20a%20Capanema%20Executive." target="_blank" class="px-5 py-2.5 rounded-full bg-gold-gradient hover:brightness-110 text-black font-extrabold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(197,160,89,0.25)] hover:shadow-[0_0_25px_rgba(197,160,89,0.45)] transition-all flex items-center gap-2">
+            <i data-lucide="calendar" class="w-3.5 h-3.5 text-black"></i>
+            <span>Reservar VIP</span>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-[#15151C] border border-white/10 text-gray-200 hover:text-gold focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-[#0E0E12] border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 flex flex-col p-6 shadow-2xl">
+    <div class="flex items-center justify-between pb-6 border-b border-white/10">
+      <img src="assets/images/identidade/logo-capanema-branco.svg" alt="Capanema Executive" class="h-7 w-auto">
+      <button id="close-menu-btn" class="p-2 rounded-lg bg-[#181820] text-gray-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto py-6 space-y-4 text-base font-medium">
+      <a href="index.html#inicio" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Início</a>
+      <a href="index.html#servicos" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Serviços Executivos</a>
+      <a href="index.html#frota" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Frota & Blindados</a>
+      <a href="index.html#experiencia" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Experiência a Bordo</a>
+      <a href="index.html#sobre" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Quem Somos</a>
+      <a href="index.html#cotacao" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Simulador de Cotação</a>
+      <a href="galerias.html" class="mobile-nav-link block py-2.5 px-3 rounded-lg hover:bg-white/5 hover:text-gold transition-colors">Galerias</a>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20reserva%20VIP." target="_blank" class="w-full py-3 px-4 rounded-xl bg-gold-gradient text-black font-bold text-center flex items-center justify-center gap-2 shadow-lg">
+        <i data-lucide="message-square" class="w-4 h-4"></i>
+        <span>Falar no WhatsApp</span>
+      </a>
+      <p class="text-xs text-center text-gray-500">Plantão de Atendimento 24h</p>
+    </div>
+  </aside>
+
+  <main class="pt-28 sm:pt-32 pb-24 relative z-10">
+
+    <!-- Hero / Header da Página -->
+    <section class="relative py-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0E] to-[#08080A]"></div>
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#C5A059]/10 via-[#9E7D3B]/5 to-transparent blur-[140px] pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#C5A059]/15 text-[#E5C378] border border-[#C5A059]/30">GALERIAS</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] hero-animate">As Experiências em Imagens</h1>
+        <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto hero-animate" style="animation-delay: 0.12s;">
+          Memórias reais de viagens, conforto a bordo, destinos e momentos que a Capanema Executive transforma em experiência.
+        </p>
+      </div>
+    </section>
+
+    <!-- Abas de Galeria -->
+    <section class="pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-wrap justify-center gap-3 mb-14" id="galeria-tabs">
+          <button type="button" class="galeria-tab px-6 py-3 rounded-full bg-gold-gradient text-black font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(197,160,89,0.25)]" data-galeria="frota">Frota & Blindados</button>
+          <button type="button" class="galeria-tab px-6 py-3 rounded-full bg-[#141419] text-gray-300 border border-white/10 hover:border-[#c5a059]/50 font-semibold text-xs uppercase tracking-wider" data-galeria="bordo">Experiência a Bordo</button>
+          <button type="button" class="galeria-tab px-6 py-3 rounded-full bg-[#141419] text-gray-300 border border-white/10 hover:border-[#c5a059]/50 font-semibold text-xs uppercase tracking-wider" data-galeria="citytour">City Tour</button>
+          <button type="button" class="galeria-tab px-6 py-3 rounded-full bg-[#141419] text-gray-300 border border-white/10 hover:border-[#c5a059]/50 font-semibold text-xs uppercase tracking-wider" data-galeria="casamentos">Casamentos</button>
+          <button type="button" class="galeria-tab px-6 py-3 rounded-full bg-[#141419] text-gray-300 border border-white/10 hover:border-[#c5a059]/50 font-semibold text-xs uppercase tracking-wider" data-galeria="aeroportos">Aeroportos</button>
+          <button type="button" class="galeria-tab px-6 py-3 rounded-full bg-[#141419] text-gray-300 border border-white/10 hover:border-[#c5a059]/50 font-semibold text-xs uppercase tracking-wider" data-galeria="van">Van Executiva</button>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+          <!-- Frota & Blindados -->
+          <div class="galeria-panel active" data-galeria="frota">
+            <div class="galeria-grid">
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/blindado-gran-cherokee.png" alt="Blindado Jeep Grand Cherokee III-A da frota Capanema Executive"><figcaption>Blindado Jeep Grand Cherokee · Segurança III-A</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/blindado-kia-carnival.png" alt="Blindado Kia Grand Carnival III-A da frota Capanema Executive"><figcaption>Blindado Kia Grand Carnival · Segurança III-A</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/van-executiva-prata.png" alt="Van Executiva VIP Capanema Executive cor prata"><figcaption>Van Executiva VIP · Cor Prata</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/van-executiva-preta.png" alt="Van Executiva VIP Capanema Executive cor preta"><figcaption>Van Executiva VIP · Cor Preta</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/taxi-executivo-corolla.jpeg" alt="Táxi Executivo Toyota Corolla Capanema Executive"><figcaption>Táxi Executivo · Toyota Corolla</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/sedan-executivo-civic.png" alt="Sedan Executivo Honda Civic G10 Capanema Executive"><figcaption>Sedan Executivo · Honda Civic G10</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/suv-chery-tiggo.png" alt="SUV Executivo Chery Tiggo 8X Turbo Capanema Executive"><figcaption>SUV Executivo · Chery Tiggo 8X Turbo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/onibus-executivo.png" alt="Ônibus Executivo Capanema Executive"><figcaption>Ônibus Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/frota-detalhe-1.png" alt="Detalhes da frota executiva Capanema"><figcaption>Detalhes da Frota Executiva</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/frota/frota-detalhe-2.png" alt="Detalhes da frota executiva Capanema"><figcaption>Detalhes da Frota Executiva</figcaption></figure>
+            </div>
+          </div>
+
+          <!-- Experiência a Bordo -->
+          <div class="galeria-panel" data-galeria="bordo">
+            <div class="galeria-grid">
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/bordo/servico-bordo-1.jpeg" alt="Cabine Executiva Capanema Experiência a Bordo - Climatização e Bebidas"><figcaption>Cabine Executiva · Climatização & Bebidas</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/bordo/servico-bordo-2.jpeg" alt="Cabine Executiva Capanema Experiência a Bordo - Café Especial"><figcaption>Cabine Executiva · Café Especial & Mimos</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/bordo/servico-bordo-3.jpeg" alt="Cabine Executiva Capanema Experiência a Bordo - Conectividade"><figcaption>Cabine Executiva · Conectividade & Carregador</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/bordo/servico-bordo-4.jpeg" alt="Cabine Executiva Capanema Experiência a Bordo - Higienização"><figcaption>Cabine Executiva · Higienização & Aromatização</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/A7B26EDA-31D6-4441-B1F1-79F2DEA098BD.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Conforto & Atmosfera a Bordo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/B7934C70-5DBF-47C8-A597-27CB85277B6A.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Conforto & Atmosfera a Bordo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/IMG_3471.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Experiência a Bordo · Momento Real</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/IMG_3472.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Experiência a Bordo · Momento Real</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/IMG_3473.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Experiência a Bordo · Momento Real</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/IMG_3475.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Experiência a Bordo · Momento Real</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aesthetic/IMG_3476.jpg" alt="Experiência a bordo Capanema Executive"><figcaption>Experiência a Bordo · Momento Real</figcaption></figure>
+            </div>
+          </div>
+
+          <!-- City Tour -->
+          <div class="galeria-panel" data-galeria="citytour">
+            <div class="galeria-grid">
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_3564.jpg" alt="City Tour Capanema Executive Lagoa Dourada"><figcaption>City Tour · Lagoa Dourada</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_3565.jpg" alt="City Tour Capanema Executive Lagoa Dourada"><figcaption>City Tour · Lagoa Dourada</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_3566.jpg" alt="City Tour Capanema Executive Lagoa Dourada"><figcaption>City Tour · Lagoa Dourada</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_3567.jpg" alt="City Tour Capanema Executive Lagoa Dourada"><figcaption>City Tour · Lagoa Dourada</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_2870.jpg" alt="City Tour Capanema Executive Rio Piracicaba"><figcaption>City Tour · Rio Piracicaba</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_2873.jpg" alt="City Tour Capanema Executive Rio Piracicaba"><figcaption>City Tour · Rio Piracicaba</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_2880.jpg" alt="City Tour Capanema Executive Rio Piracicaba"><figcaption>City Tour · Rio Piracicaba</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/14764F09-3BD5-4750-B1E8-2ADEA7792FEF.jpg" alt="City Tour Capanema Executive Ouro Preto"><figcaption>City Tour · Ouro Preto</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/D236F3A7-CBFD-404C-B3EB-78378B2C3049.jpg" alt="City Tour Capanema Executive Ouro Preto"><figcaption>City Tour · Ouro Preto</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/citytour/IMG_2406.jpg" alt="City Tour Capanema Executive Ouro Preto"><figcaption>City Tour · Ouro Preto</figcaption></figure>
+            </div>
+          </div>
+
+          <!-- Casamentos -->
+          <div class="galeria-panel" data-galeria="casamentos">
+            <div class="galeria-grid">
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4451.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4460.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4462.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4481.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4485.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4489.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4493.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4473.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_4475.jpg" alt="Casamento Ana Sofia e Rodrigo Capanema Executive"><figcaption>Casamento · Ana Sofia & Rodrigo · 05/09/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5313.jpg" alt="Casamento Caroline e Pedro Capanema Executive"><figcaption>Casamento · Caroline & Pedro · 24/10/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5338.jpg" alt="Casamento Caroline e Pedro Capanema Executive"><figcaption>Casamento · Caroline & Pedro · 24/10/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5340.jpg" alt="Casamento Caroline e Pedro Capanema Executive"><figcaption>Casamento · Caroline & Pedro · 24/10/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5052.jpg" alt="Casamento Joice e Luis Capanema Executive"><figcaption>Casamento · Joice & Luis · 10/10/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5064.jpg" alt="Casamento Joice e Luis Capanema Executive"><figcaption>Casamento · Joice & Luis · 10/10/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5079.jpg" alt="Casamento Joice e Luis Capanema Executive"><figcaption>Casamento · Joice & Luis · 10/10/2026</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/casamentos/IMG_5085.jpg" alt="Casamento Joice e Luis Capanema Executive"><figcaption>Casamento · Joice & Luis · 10/10/2026</figcaption></figure>
+            </div>
+          </div>
+
+          <!-- Aeroportos -->
+          <div class="galeria-panel" data-galeria="aeroportos">
+            <div class="galeria-grid">
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_4379.jpg" alt="Aeroporto da Pampulha Capanema Executive"><figcaption>Aeroporto · Pampulha</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_4380.jpg" alt="Aeroporto da Pampulha Capanema Executive"><figcaption>Aeroporto · Pampulha</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_4381.jpg" alt="Aeroporto da Pampulha Capanema Executive"><figcaption>Aeroporto · Pampulha</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_3437.jpg" alt="Aeroporto de Confins Capanema Executive"><figcaption>Aeroporto · Confins</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_3438.jpg" alt="Aeroporto de Confins Capanema Executive"><figcaption>Aeroporto · Confins</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_4164.jpg" alt="Aeroporto de Confins Capanema Executive"><figcaption>Aeroporto · Confins</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_4171.jpg" alt="Aeroporto de Confins Capanema Executive"><figcaption>Aeroporto · Confins</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/aeroportos/IMG_4429.jpg" alt="Aeroporto de Confins Capanema Executive"><figcaption>Aeroporto · Confins</figcaption></figure>
+            </div>
+          </div>
+
+          <!-- Van Executiva -->
+          <div class="galeria-panel" data-galeria="van">
+            <div class="galeria-grid">
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/013a4bdd-d30d-4b4b-bb3a-7824c39bdf10.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/086feee2-d06a-488b-b8d6-bf9e981680cd.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/0c7dca10-f6a6-4797-b8b5-e673ca843877.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/211918ad-6ce4-41b5-9caf-6439a8976295.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/2333d04b-5b01-4a99-88c7-1113d97fbd38.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/3266eaa6-32eb-4cf6-9af5-f9a6e3e9a2fc.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/4fb5d78d-ac33-4db5-b9a9-d9417de890d5.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+              <figure class="galeria-card reveal"><img class="galeria-img" src="assets/images/galerias/van/51e3d252-4f5b-40c9-bafc-234170f27559.jpg" alt="Van Executiva VIP Capanema Executive"><figcaption>Van Executiva VIP · Transporte Executivo</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 relative overflow-hidden bg-gradient-to-b from-[#0A0A0E] to-[#08080A]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1A1A22] border border-[#C5A059]/40 text-xs font-bold text-gold">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i> PRÓXIMO DESTINO?
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">Mais uma experiência a bordo?</h2>
+        <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+          Fale com o plantão no WhatsApp e monte um roteiro sob medida para a sua próxima viagem com Capanema Executive.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/5531993008300?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20reserva%20VIP%20com%20a%20Capanema%20Executive." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-gradient text-black font-extrabold text-base hover:brightness-110 shadow-2xl flex items-center justify-center gap-3 transition-all">
+            <i data-lucide="message-square" class="w-5 h-5"></i>
+            <span>Falar no WhatsApp Agora</span>
+          </a>
+          <a href="index.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#14141B] hover:bg-[#1A1A24] border border-white/10 text-white font-semibold text-base flex items-center justify-center gap-2 transition-all">
+            <i data-lucide="arrow-left" class="w-4 h-4 text-gold"></i>
+            <span>Voltar para o Site</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#050507] border-t border-white/5 pt-16 pb-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500">
+        <p>© 2026 Capanema Executive. Todos os direitos reservados.</p>
+        <div class="flex items-center gap-4">
+          <span>Privacidade & Termos</span>
+          <span>Desenvolvido com Padrão de Excelência</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="galeria-lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de foto">
+    <button id="galeria-lightbox-close" class="galeria-lightbox-close" aria-label="Fechar"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <button id="galeria-lightbox-prev" class="galeria-lightbox-prev" aria-label="Anterior"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+    <button id="galeria-lightbox-next" class="galeria-lightbox-next" aria-label="Próxima"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+    <img id="galeria-lightbox-img" src="" alt="Capanema Executive">
+  </div>
+
+  <!-- Script Initialization -->
+  <script src="animacoes.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
