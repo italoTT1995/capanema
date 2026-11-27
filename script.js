@@ -15,26 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1550);
   }
 
-  // 0b. Marquee B2B Pause / Play Toggle
-  const marqueeToggleBtn = document.getElementById('marquee-toggle-btn');
-  const marqueeTrack = document.getElementById('b2b-marquee-track');
-  const marqueeStatusText = document.getElementById('marquee-status-text');
-  const marqueeIconPause = document.getElementById('marquee-icon-pause');
-  const marqueeIconPlay = document.getElementById('marquee-icon-play');
-  if (marqueeToggleBtn && marqueeTrack) {
-    marqueeToggleBtn.addEventListener('click', () => {
-      const isPaused = marqueeTrack.classList.toggle('paused');
-      if (marqueeStatusText) {
-        marqueeStatusText.textContent = isPaused ? 'PAUSADO' : 'EM MOVIMENTO';
-      }
-      if (marqueeIconPause && marqueeIconPlay) {
-        marqueeIconPause.classList.toggle('hidden', isPaused);
-        marqueeIconPlay.classList.toggle('hidden', !isPaused);
-      }
-    });
-  }
-
-  // 0c. FAQ Accordion (Single-open behavior like reference)
+  // 0b. FAQ Accordion (Single-open behavior like reference)
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
